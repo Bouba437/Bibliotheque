@@ -1,0 +1,11 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: "sigmar one", cursive;
+}
+
+.p_bgColorBlue {
+    background-color: rgb(103, 172, 218);
+}
+
+.btn {
+    opacity: 1;
+}
