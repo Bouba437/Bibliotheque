@@ -35,12 +35,15 @@
         <h1 class="text-light border border-dark m-2 p-2 rounded text-center p_bgColorBlue">Liste des livres de la Bibliothèque</h1>
 
         <table class="table text-center monTableau" id="tableauLivres">
-            <tr class="table-dark">
-                <th scope="col">Titre</th>
-                <th scope="col">Auteur</th>
-                <th scope="col">Nombre de page</th>
-                <th scope="col" colspan="2">Actions</th>
-            </tr>
+            <thead>
+                <tr class="table-dark">
+                    <th scope="col">Titre</th>
+                    <th scope="col">Auteur</th>
+                    <th scope="col">Nombre de page</th>
+                    <th scope="col" colspan="2">Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
         </table>
         <button onclick="ajoutFormulaire()" class="btn btn-success w-100">Ajouter</button>
         <form id="ajoutForm" class="d-none">
@@ -56,9 +59,9 @@
                 </div>
                 <div class="mb-3">
                     <label for="pages">Nombre de pages</label>
-                    <input type="text" class="form-control" id="pages">
+                    <input type="number" class="form-control" id="pages">
                 </div>
-                <button class="btn btn-primary">Valider</button>
+                <button id="validationAjoutForm" class="btn btn-primary">Valider</button>
             </fieldset>
         </form>
     </div>
