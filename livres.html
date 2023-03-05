@@ -42,23 +42,25 @@
                 <th scope="col" colspan="2">Actions</th>
             </tr>
         </table>
-        <a href="" class="btn btn-success d-block">Ajouter</a>
-        <fieldset>
-            <legend>Création d'un livre</legend>
-            <div class="mb-3">
-                <label for="titre">Titre du livre</label>
-                <input type="text" class="form-control" id="titre">
-            </div>
-            <div class="mb-3">
-                <label for="auteur">Auteur</label>
-                <input type="text" class="form-control" id="auteur">
-            </div>
-            <div class="mb-3">
-                <label for="pages">Nombre de pages</label>
-                <input type="text" class="form-control" id="pages">
-            </div>
-            <button class="btn btn-primary">Valider</button>
-        </fieldset>
+        <button onclick="ajoutFormulaire()" class="btn btn-success w-100">Ajouter</button>
+        <form id="ajoutForm" class="d-none">
+            <fieldset>
+                <legend>Création d'un livre</legend>
+                <div class="mb-3">
+                    <label for="titre">Titre du livre</label>
+                    <input type="text" class="form-control" id="titre">
+                </div>
+                <div class="mb-3">
+                    <label for="auteur">Auteur</label>
+                    <input type="text" class="form-control" id="auteur">
+                </div>
+                <div class="mb-3">
+                    <label for="pages">Nombre de pages</label>
+                    <input type="text" class="form-control" id="pages">
+                </div>
+                <button class="btn btn-primary">Valider</button>
+            </fieldset>
+        </form>
     </div>
    
     <script src="javascript/main.js"></script>

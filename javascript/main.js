@@ -33,10 +33,6 @@ for(var i = 0; i < livres.length; i++) {
     table.appendChild(livre1);
 }
 
-// var livre1 = document.createElement("tr");
-// livre1.innerHTML = `<td>L'algorithmique selon Boubadev</td>
-//                     <td>Boubacar Diarra</td>
-//                     <td>200</td>
-//                     <td><button type="button" class="btn bg-warning">Modifier</button></td>
-//                     <td><button type="button" class="btn bg-danger">Supprimer</button></td>`;
-// table.appendChild(livre1);
+function ajoutFormulaire() {
+    document.querySelector("#ajoutForm").removeAttribute("class");
+}
