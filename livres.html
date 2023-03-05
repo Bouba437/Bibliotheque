@@ -64,6 +64,26 @@
                 <button id="validationAjoutForm" class="btn btn-primary">Valider</button>
             </fieldset>
         </form>
+        <!-- Modification form -->
+        <form id="modifLivre" class="d-none">
+            <fieldset>
+                <legend>Modification d'un livre</legend>
+                <div class="mb-3">
+                    <label for="titre">Titre du livre</label>
+                    <input type="text" class="form-control" id="titre">
+                </div>
+                <div class="mb-3">
+                    <label for="auteur">Auteur</label>
+                    <input type="text" class="form-control" id="auteur">
+                </div>
+                <div class="mb-3">
+                    <label for="pages">Nombre de pages</label>
+                    <input type="number" class="form-control" id="pages">
+                </div>
+                <input type="hidden" id="identifiant" value="">
+                <button id="validationModification" class="btn btn-primary">Modifier</button>
+            </fieldset>
+        </form>
     </div>
    
     <script src="javascript/main.js"></script>

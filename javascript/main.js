@@ -33,8 +33,8 @@ function afficherLivres() {
                     <td>${biblio[i].nom}</td>
                     <td>${biblio[i].auteur}</td>
                     <td>${biblio[i].pages}</td>
-                    <td><button type="button" class="btn bg-warning">Modifier</button></td>
-                    <td><button type="button" class="btn bg-danger">Supprimer</button></td>
+                    <td><button type="button" class="btn bg-warning" onClick="afficherFormModification(${i})">Modifier</button></td>
+                    <td><button type="button" class="btn bg-danger" onClick="supprimerLivre(${i})">Supprimer</button></td>
                 </tr>`;
     }
     tableauLivres.innerHTML = livres;
@@ -42,6 +42,7 @@ function afficherLivres() {
 
 function ajoutFormulaire() {
     document.querySelector("#ajoutForm").removeAttribute("class");
+    document.querySelector("#modifLivre").className = "d-none";
 }
 
 document.querySelector("#validationAjoutForm").addEventListener("click", function(event) {
@@ -65,3 +66,40 @@ function ajoutLivre(titre, auteur, pages) {
     biblio.push(livre);
    afficherLivres();
 }
+
+function supprimerLivre(positionLivre) {
+    if(confirm("Voulez-vous vraiment supprimer ?")) {
+        biblio.splice(positionLivre, 1);
+        afficherLivres();
+        alert("Suppression effectuée")
+    } else {
+        alert("Action annulée");
+    }
+}
+
+function afficherFormModification(positionLivre) {
+    document.querySelector("#ajoutForm").className = "d-none";
+
+    var livre = biblio[positionLivre];
+    document.querySelector("#modifLivre").removeAttribute("class");
+    document.querySelector("#modifLivre #titre").value = livre.nom;
+    document.querySelector("#modifLivre #auteur").value = livre.auteur;
+    document.querySelector("#modifLivre #pages").value = livre.pages;
+    document.querySelector("#modifLivre #identifiant").value = positionLivre;
+
+}
+
+document.querySelector("#validationModification").addEventListener("click", function(event) {
+    event.preventDefault();
+    var positionLivre = document.querySelector("#modifLivre #identifiant").value;
+    var titre = document.querySelector("#modifLivre #titre").value;
+    var auteur = document.querySelector("#modifLivre #auteur").value;
+    var pages = parseInt(document.querySelector("#modifLivre #pages").value);
+
+    biblio[positionLivre].nom = titre;
+    biblio[positionLivre].auteur = auteur;
+    biblio[positionLivre].pages = pages;
+
+    afficherLivres();
+    document.querySelector("#modifLivre").className = "d-none";
+})
